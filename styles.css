@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: sans-serif;
+}
+:root {
+    --white: white;
+    --off-white: #f5f3ff;
+    --main-color: #8b5cf6;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    
+    height: min(100vh, 800px);
+}
+
+.sidebar {
+    grid-row: 1 / span 2;
+
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    align-items: start;
+    gap: 50px;
+    
+    background-color: var(--main-color);
+    color: var(--white);
+}
+.logo {
+    padding: 15px;
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo>i {
+    font-size: 2.5rem;
+}
+.sidebar-items {
+    display: grid;
+    gap: 50px;
+}
+.sidebar-item {
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.header {
+    grid-column: 2 / span 1;
+    grid-row: 2 span 1;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    box-shadow: 0 5px 5px -5px gray;
+}
+.header-top {
+    grid-row: 1 / span 1;
+    display: grid;
+    align-items: center;
+}
+.header-top>*, .header-top-right>*, .header-top-search>*{
+    grid-row: 1 / span 1;
+}
+.header-top-search {
+    display: grid;
+    align-items: center;
+    justify-self: start;
+    gap: 20px;
+    padding-left: 50px;
+}
+.header-top-search>button {
+    background-color: var(--white);
+    height: 40px;
+    width: 40px;
+    border: 0;
+}
+.header-top-search>input {
+    background-color: var(--off-white);
+    border-radius: 50px;
+    width: 40vw;
+    height: 1.5rem;
+}
+.header-top-right {
+    display: grid;
+    align-items: center;
+    justify-self: end;
+    gap: 20px;
+    padding-right: 50px;
+}
+.header-top-right .name {
+    font-weight: bold;
+}
+#cat-img {
+    width: 40px;
+    height: auto;
+    border-radius: 50px;
+}
+.header-bottom {
+    grid-row: 2 / span 1;
+    display: grid;
+    justify-content: space-between;
+}
+.header-bottom-left, .header-bottom-right {
+    grid-row: 1 / span 1;
+    display: grid;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 50px;
+}
+.header-bottom-left>*, .header-bottom-right>* {
+    grid-row: 1 / span 1;
+}
+.header-bottom-left>#cat-img {
+    width: 60px;
+}
+.header-bottom-left>.user-greeting {
+    font-weight: bold;
+}
+.user-greeting p {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+.user-greeting .user-name {
+    font-size: 1.2rem;
+}
+.header-bottom-right button {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 0;
+}
+
+.main {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
